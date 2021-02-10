@@ -1,0 +1,17 @@
+{
+  "name": "md-i18n",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "md-i18n": "index.js"
+  },
+  "repository": "https://github.com/Kotlia/md-i18n.git",
+  "author": "Shun Ueda <62182668+Kotlia@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "deepl-scraper": "^1.0.11",
+    "draftlog": "^1.0.12",
+    "ora": "^5.3.0"
+  }
+}

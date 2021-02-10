@@ -1,0 +1,8 @@
+# デフォルトの無視ファイル
+/shelf/
+/workspace.xml
+# データソースのローカルストレージがファイルを無視しました
+/../../../../../../../../:\Users\shunu\Documents\github\js\md-i18n\.idea/dataSources/
+/dataSources.local.xml
+# エディターベースの HTTP クライアントリクエスト
+/httpRequests/
