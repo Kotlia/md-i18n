@@ -1,21 +1,25 @@
 # md-i18n
 
-Markdownを日本語に翻訳するだけのシンプルなCLIツールです。
+I18n for Markdown files.
 
 Install: ```yarn global add md-i18n```
 
-翻訳したいファイルを```docs```ファイルに入れて、親ディレクトリで```md-i18n```と実行すると自動的に翻訳が始まります。
-翻訳されたファイルは```i18n```ファイルに収納されます。
+Put the file you want to translate into the ``docs`` file and run ``md-i18n`` in the parent directory to start the translation automatically.
+The translated files will be stored in the ``i18n`` file.
 
-## わかりにくいので図解：
-parent <- ここで ```md-i18n```
+Check [this](https://www.npmjs.com/package/deepl-scraper) website for available languages.
 
-├─docs     <- ここに翻訳したいファイル
+Command smaple: ```md-i18n --target=ja-JA --souce=en```
 
-└─i18n     <- ここに格納される
 
-## 非同期にしない理由
-翻訳サーバーに負荷をかけて訴えられたらエラいことになるから
+parent <- run command here
+
+├─docs     <- file you want to translate
+
+└─i18n     <- translated files will be stored here
+
+## Why not asynchronous?
+Because I don't want to overload the translation server and get into trouble.
 
 ## Example
 ![](https://cdn.discordapp.com/attachments/718050872663212086/808881641816719390/2021-02-09_205729.png)
