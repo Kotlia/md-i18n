@@ -1,11 +1,10 @@
 #!/usr/bin/env node
 
-import Config from "./src/Config.js";
 import fs from 'fs'
 import path from "path";
 import Deepl from 'deepl-scraper'
-import ora from 'ora'
 import Draftlog from 'draftlog'
+import yargs from 'yargs'
 
 Draftlog(console)
 
@@ -13,6 +12,20 @@ const root = path.resolve(path.resolve(), "docs")
 const out = path.resolve(path.resolve(), "i18n")
 
 fs.mkdir(out, () => {})
+
+const argv = yargs
+    .option('target', {
+        alias: 't',
+        description: 'Language for word/sentence to be translated',
+        demandOption: true
+    })
+    .option('source', {
+        alias: 's',
+        description: 'Word/sentence original language',
+        default: 'auto'
+    })
+    .help()
+    .argv
 
 fs.readdir(root, async (e, files) => {
     let draftList = []
@@ -47,7 +60,7 @@ fs.readdir(root, async (e, files) => {
                     ) {
                         res.push(it)
                     } else {
-                        res.push((await Deepl.translate(it, "auto", "ja-JA")).target.translation)
+                        res.push((await Deepl.translate(it, argv.source, argv.target)).target.translation)
                     }
                     i++
                     draftList[n](`${file}: [${i}/${s.length}]`)

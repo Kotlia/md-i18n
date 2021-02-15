@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "deepl-scraper": "^1.0.11",
-    "draftlog": "^1.0.12"
+    "draftlog": "^1.0.12",
+    "yargs": "^16.2.0"
   }
 }
